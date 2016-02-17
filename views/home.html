@@ -1,5 +1,5 @@
 <!-- STEP 7A -->
-<div>
+<div  ng-controller="HomeController as ctrl">
   <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true" data-interval="3000">
       <ol class="carousel-indicators">
           <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
@@ -34,16 +34,16 @@
 
   <ul class="list-unstyled" id="items-list">
       <!-- STEP 7B -->
-      <li class="col-md-4">
+      <li class="col-md-4"  ng-repeat="product in ctrl.products">
           <div class="row">
               <div class="col-xs-4">
                   <!-- STEP 7C -->
-                  <a href="javascript:void(0)"><img alt="" class="img-responsive"></a>
+                  <a href="javascript:void(0)"><img  ng-src="images/{{ product.thumb }}"  alt="" class="img-responsive"></a>
               </div>
               <div class="product-description-holder col-xs-8">
                   <!-- STEP 7D -->
-                  <h2><a href="javascript:void(0)"></a></h2>
-                  <p></p>
+                  <h2><a href="javascript:void(0)">{{ product.title }}</a></h2>
+                  <p>{{ product.description }}</p>
               </div>
           </div>
       </li>

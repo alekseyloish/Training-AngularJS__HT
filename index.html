@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- STEP 6A -->
-<html>
+<html  ng-app="auction">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Auction</title>
@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- STEP 6D -->
-                <a class="navbar-brand" href="javascript:void(0)">ABC Auction</a>
+                <a class="navbar-brand" href="javascript:void(0)"  ng-click="currentView = 'home'">ABC Auction</a>
             </div>
             <div class="navbar-collapse collapse">
                 <form class="navbar-form navbar-left navbar-input-group" role="search">
@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" placeholder="Enter product name">
                     </div>
                     <!-- STEP 6E -->
-                    <a href="javascript:void(0)" class="btn btn-default">Search</a>
+                    <a href="javascript:void(0)" class="btn btn-default"  ng-click="currentView = 'search'">Search</a>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
@@ -41,7 +41,7 @@
 
     <div class="container">
         <!-- STEP 6B --><!-- STEP 6C -->
-        <div class="row">
+        <div class="row"  ng-init="currentView = 'home'"  ng-include="'views/' + currentView + '.html'">
     </div>
 
     <!-- Footer -->
